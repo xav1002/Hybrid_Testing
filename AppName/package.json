@@ -1,0 +1,22 @@
+{
+  "name": "appname",
+  "private": true,
+  "main": "index.js",
+  "version": "0.0.1",
+  "scripts": {
+    "rn-cli": "node scripts/react-native.js",
+    "start:android": "npm run rn-cli -- run-android",
+    "start:windows": "npm run rn-cli -- run-windows",
+    "start:ios": "npm run rn-cli -- run-ios",
+    "start:web": "cross-env platform=web webpack-dev-server --config=web/webpack/dev.js --progress --colors --mode=development",
+    "start:rn-dev-server": "npm run rn-cli -- start --reset-cache",
+    "build:web": "cross-env platform=web webpack --config=web/webpack/prod.js --progress --colors --mode=production",
+    "test": "jest -c jest/jest.config.js",
+    "test:watch": "npm run test -- --watch",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest -c jest/jest.config.js --runInBand",
+    "build:types": "tsc --emitDeclarationOnly",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- -w",
+    "lint": "eslint --config .eslintrc --ext .ts,.tsx src"
+  }
+}
